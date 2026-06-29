@@ -5,11 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Comment** | Pointer to **string** | Optional. Comment for the object. | [optional] 
-**ExternalPrimaries** | Pointer to [**[]ExternalPrimary**](ExternalPrimary.md) | Optional. DNS primaries external to BloxOne DDI. Order is not significant. | [optional] 
-**ExternalSecondaries** | Pointer to [**[]ExternalSecondary**](ExternalSecondary.md) | DNS secondaries external to BloxOne DDI. Order is not significant. | [optional] 
+**ExternalPrimaries** | Pointer to [**[]ExternalPrimary**](ExternalPrimary.md) | Optional. DNS primaries external to Universal DDI. Order is not significant. | [optional] 
+**ExternalSecondaries** | Pointer to [**[]ExternalSecondary**](ExternalSecondary.md) | DNS secondaries external to Universal DDI. Order is not significant. | [optional] 
+**GridPrimaries** | Pointer to [**[]MemberServer**](MemberServer.md) | Optional. The list of the NIOS Grid Primaries assigned to an AuthNSG, only applicable for the NIOS. | [optional] 
+**GridSecondaries** | Pointer to [**[]MemberServer**](MemberServer.md) | Optional. The list of the NIOS Grid Secondaries assigned to an AuthNSG, only applicable for the NIOS. | [optional] 
 **Id** | Pointer to **string** | The resource identifier. | [optional] [readonly] 
-**InternalSecondaries** | Pointer to [**[]InternalSecondary**](InternalSecondary.md) | Optional. BloxOne DDI hosts acting as internal secondaries. Order is not significant. | [optional] 
+**InternalSecondaries** | Pointer to [**[]InternalSecondary**](InternalSecondary.md) | Optional. Universal DDI hosts acting as internal secondaries. Order is not significant. | [optional] 
 **Name** | **string** | Name of the object. | 
+**Nameservers** | Pointer to [**[]Nameserver**](Nameserver.md) | Optional. A list of DNS Nameservers of various roles. | [optional] 
 **Nsgs** | Pointer to **[]string** | The resource identifier. | [optional] 
 **Tags** | Pointer to **map[string]interface{}** | Tagging specifics. | [optional] 
 
@@ -107,6 +110,56 @@ SetExternalSecondaries sets ExternalSecondaries field to given value.
 
 HasExternalSecondaries returns a boolean if a field has been set.
 
+### GetGridPrimaries
+
+`func (o *AuthNSG) GetGridPrimaries() []MemberServer`
+
+GetGridPrimaries returns the GridPrimaries field if non-nil, zero value otherwise.
+
+### GetGridPrimariesOk
+
+`func (o *AuthNSG) GetGridPrimariesOk() (*[]MemberServer, bool)`
+
+GetGridPrimariesOk returns a tuple with the GridPrimaries field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGridPrimaries
+
+`func (o *AuthNSG) SetGridPrimaries(v []MemberServer)`
+
+SetGridPrimaries sets GridPrimaries field to given value.
+
+### HasGridPrimaries
+
+`func (o *AuthNSG) HasGridPrimaries() bool`
+
+HasGridPrimaries returns a boolean if a field has been set.
+
+### GetGridSecondaries
+
+`func (o *AuthNSG) GetGridSecondaries() []MemberServer`
+
+GetGridSecondaries returns the GridSecondaries field if non-nil, zero value otherwise.
+
+### GetGridSecondariesOk
+
+`func (o *AuthNSG) GetGridSecondariesOk() (*[]MemberServer, bool)`
+
+GetGridSecondariesOk returns a tuple with the GridSecondaries field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGridSecondaries
+
+`func (o *AuthNSG) SetGridSecondaries(v []MemberServer)`
+
+SetGridSecondaries sets GridSecondaries field to given value.
+
+### HasGridSecondaries
+
+`func (o *AuthNSG) HasGridSecondaries() bool`
+
+HasGridSecondaries returns a boolean if a field has been set.
+
 ### GetId
 
 `func (o *AuthNSG) GetId() string`
@@ -176,6 +229,31 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+
+### GetNameservers
+
+`func (o *AuthNSG) GetNameservers() []Nameserver`
+
+GetNameservers returns the Nameservers field if non-nil, zero value otherwise.
+
+### GetNameserversOk
+
+`func (o *AuthNSG) GetNameserversOk() (*[]Nameserver, bool)`
+
+GetNameserversOk returns a tuple with the Nameservers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNameservers
+
+`func (o *AuthNSG) SetNameservers(v []Nameserver)`
+
+SetNameservers sets Nameservers field to given value.
+
+### HasNameservers
+
+`func (o *AuthNSG) HasNameservers() bool`
+
+HasNameservers returns a boolean if a field has been set.
 
 ### GetNsgs
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddEdnsOptionInOutgoingQuery** | Pointer to [**Inheritance2InheritedBool**](Inheritance2InheritedBool.md) | Field config for _add_edns_option_in_outgoing_query_ field from _View_ object. | [optional] 
 **CustomRootNsBlock** | Pointer to [**InheritedCustomRootNSBlock**](InheritedCustomRootNSBlock.md) | Optional. Field config for _custom_root_ns_block_ field from _View_ object. | [optional] 
+**DnssecSigningPolicy** | Pointer to [**InheritedDNSSECSigningPolicy**](InheritedDNSSECSigningPolicy.md) | Optional. Field configuration for _dnssec_signing_policy_ field from _View_ object. | [optional] 
 **DnssecValidationBlock** | Pointer to [**InheritedDNSSECValidationBlock**](InheritedDNSSECValidationBlock.md) | Optional. Field config for _dnssec_validation_block_ field from _View_ object. | [optional] 
 **DtcConfig** | Pointer to [**InheritedDtcConfig**](InheritedDtcConfig.md) | Optional. Field config for _dtc_config_ field from _View_ object. | [optional] 
 **EcsBlock** | Pointer to [**InheritedECSBlock**](InheritedECSBlock.md) | Optional. Field config for _ecs_block_ field from _View_ object. | [optional] 
@@ -99,6 +100,31 @@ SetCustomRootNsBlock sets CustomRootNsBlock field to given value.
 `func (o *ViewInheritance) HasCustomRootNsBlock() bool`
 
 HasCustomRootNsBlock returns a boolean if a field has been set.
+
+### GetDnssecSigningPolicy
+
+`func (o *ViewInheritance) GetDnssecSigningPolicy() InheritedDNSSECSigningPolicy`
+
+GetDnssecSigningPolicy returns the DnssecSigningPolicy field if non-nil, zero value otherwise.
+
+### GetDnssecSigningPolicyOk
+
+`func (o *ViewInheritance) GetDnssecSigningPolicyOk() (*InheritedDNSSECSigningPolicy, bool)`
+
+GetDnssecSigningPolicyOk returns a tuple with the DnssecSigningPolicy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDnssecSigningPolicy
+
+`func (o *ViewInheritance) SetDnssecSigningPolicy(v InheritedDNSSECSigningPolicy)`
+
+SetDnssecSigningPolicy sets DnssecSigningPolicy field to given value.
+
+### HasDnssecSigningPolicy
+
+`func (o *ViewInheritance) HasDnssecSigningPolicy() bool`
+
+HasDnssecSigningPolicy returns a boolean if a field has been set.
 
 ### GetDnssecValidationBlock
 

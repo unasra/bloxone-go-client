@@ -22,16 +22,22 @@ var _ MappedNullable = &AuthNSG{}
 type AuthNSG struct {
 	// Optional. Comment for the object.
 	Comment *string `json:"comment,omitempty"`
-	// Optional. DNS primaries external to BloxOne DDI. Order is not significant.
+	// Optional. DNS primaries external to Universal DDI. Order is not significant.
 	ExternalPrimaries []ExternalPrimary `json:"external_primaries,omitempty"`
-	// DNS secondaries external to BloxOne DDI. Order is not significant.
+	// DNS secondaries external to Universal DDI. Order is not significant.
 	ExternalSecondaries []ExternalSecondary `json:"external_secondaries,omitempty"`
+	// Optional. The list of the NIOS Grid Primaries assigned to an AuthNSG, only applicable for the NIOS.
+	GridPrimaries []MemberServer `json:"grid_primaries,omitempty"`
+	// Optional. The list of the NIOS Grid Secondaries assigned to an AuthNSG, only applicable for the NIOS.
+	GridSecondaries []MemberServer `json:"grid_secondaries,omitempty"`
 	// The resource identifier.
 	Id *string `json:"id,omitempty"`
-	// Optional. BloxOne DDI hosts acting as internal secondaries. Order is not significant.
+	// Optional. Universal DDI hosts acting as internal secondaries. Order is not significant.
 	InternalSecondaries []InternalSecondary `json:"internal_secondaries,omitempty"`
 	// Name of the object.
 	Name string `json:"name"`
+	// Optional. A list of DNS Nameservers of various roles.
+	Nameservers []Nameserver `json:"nameservers,omitempty"`
 	// The resource identifier.
 	Nsgs []string `json:"nsgs,omitempty"`
 	// Tagging specifics.
@@ -155,6 +161,70 @@ func (o *AuthNSG) SetExternalSecondaries(v []ExternalSecondary) {
 	o.ExternalSecondaries = v
 }
 
+// GetGridPrimaries returns the GridPrimaries field value if set, zero value otherwise.
+func (o *AuthNSG) GetGridPrimaries() []MemberServer {
+	if o == nil || IsNil(o.GridPrimaries) {
+		var ret []MemberServer
+		return ret
+	}
+	return o.GridPrimaries
+}
+
+// GetGridPrimariesOk returns a tuple with the GridPrimaries field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthNSG) GetGridPrimariesOk() ([]MemberServer, bool) {
+	if o == nil || IsNil(o.GridPrimaries) {
+		return nil, false
+	}
+	return o.GridPrimaries, true
+}
+
+// HasGridPrimaries returns a boolean if a field has been set.
+func (o *AuthNSG) HasGridPrimaries() bool {
+	if o != nil && !IsNil(o.GridPrimaries) {
+		return true
+	}
+
+	return false
+}
+
+// SetGridPrimaries gets a reference to the given []MemberServer and assigns it to the GridPrimaries field.
+func (o *AuthNSG) SetGridPrimaries(v []MemberServer) {
+	o.GridPrimaries = v
+}
+
+// GetGridSecondaries returns the GridSecondaries field value if set, zero value otherwise.
+func (o *AuthNSG) GetGridSecondaries() []MemberServer {
+	if o == nil || IsNil(o.GridSecondaries) {
+		var ret []MemberServer
+		return ret
+	}
+	return o.GridSecondaries
+}
+
+// GetGridSecondariesOk returns a tuple with the GridSecondaries field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthNSG) GetGridSecondariesOk() ([]MemberServer, bool) {
+	if o == nil || IsNil(o.GridSecondaries) {
+		return nil, false
+	}
+	return o.GridSecondaries, true
+}
+
+// HasGridSecondaries returns a boolean if a field has been set.
+func (o *AuthNSG) HasGridSecondaries() bool {
+	if o != nil && !IsNil(o.GridSecondaries) {
+		return true
+	}
+
+	return false
+}
+
+// SetGridSecondaries gets a reference to the given []MemberServer and assigns it to the GridSecondaries field.
+func (o *AuthNSG) SetGridSecondaries(v []MemberServer) {
+	o.GridSecondaries = v
+}
+
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *AuthNSG) GetId() string {
 	if o == nil || IsNil(o.Id) {
@@ -243,6 +313,38 @@ func (o *AuthNSG) SetName(v string) {
 	o.Name = v
 }
 
+// GetNameservers returns the Nameservers field value if set, zero value otherwise.
+func (o *AuthNSG) GetNameservers() []Nameserver {
+	if o == nil || IsNil(o.Nameservers) {
+		var ret []Nameserver
+		return ret
+	}
+	return o.Nameservers
+}
+
+// GetNameserversOk returns a tuple with the Nameservers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthNSG) GetNameserversOk() ([]Nameserver, bool) {
+	if o == nil || IsNil(o.Nameservers) {
+		return nil, false
+	}
+	return o.Nameservers, true
+}
+
+// HasNameservers returns a boolean if a field has been set.
+func (o *AuthNSG) HasNameservers() bool {
+	if o != nil && !IsNil(o.Nameservers) {
+		return true
+	}
+
+	return false
+}
+
+// SetNameservers gets a reference to the given []Nameserver and assigns it to the Nameservers field.
+func (o *AuthNSG) SetNameservers(v []Nameserver) {
+	o.Nameservers = v
+}
+
 // GetNsgs returns the Nsgs field value if set, zero value otherwise.
 func (o *AuthNSG) GetNsgs() []string {
 	if o == nil || IsNil(o.Nsgs) {
@@ -326,6 +428,12 @@ func (o AuthNSG) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ExternalSecondaries) {
 		toSerialize["external_secondaries"] = o.ExternalSecondaries
 	}
+	if !IsNil(o.GridPrimaries) {
+		toSerialize["grid_primaries"] = o.GridPrimaries
+	}
+	if !IsNil(o.GridSecondaries) {
+		toSerialize["grid_secondaries"] = o.GridSecondaries
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
@@ -333,6 +441,9 @@ func (o AuthNSG) ToMap() (map[string]interface{}, error) {
 		toSerialize["internal_secondaries"] = o.InternalSecondaries
 	}
 	toSerialize["name"] = o.Name
+	if !IsNil(o.Nameservers) {
+		toSerialize["nameservers"] = o.Nameservers
+	}
 	if !IsNil(o.Nsgs) {
 		toSerialize["nsgs"] = o.Nsgs
 	}
@@ -385,9 +496,12 @@ func (o *AuthNSG) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "comment")
 		delete(additionalProperties, "external_primaries")
 		delete(additionalProperties, "external_secondaries")
+		delete(additionalProperties, "grid_primaries")
+		delete(additionalProperties, "grid_secondaries")
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "internal_secondaries")
 		delete(additionalProperties, "name")
+		delete(additionalProperties, "nameservers")
 		delete(additionalProperties, "nsgs")
 		delete(additionalProperties, "tags")
 		o.AdditionalProperties = additionalProperties
