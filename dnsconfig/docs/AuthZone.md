@@ -43,6 +43,7 @@ Name | Type | Description | Notes
 **UpdateAcl** | Pointer to [**[]ACLItem**](ACLItem.md) | Optional. Specifies which hosts are allowed to submit Dynamic DNS updates for authoritative zones of _primary_type_ _cloud_.  Defaults to empty. | [optional] 
 **UpdatedAt** | Pointer to **time.Time** | Time when the object has been updated. Equals to _created_at_ if not updated after creation. | [optional] [readonly] 
 **UseForwardersForSubzones** | Pointer to **bool** | Optional. Use default forwarders to resolve queries for subzones.  Defaults to _true_. | [optional] 
+**Version** | Pointer to **string** | Read Only.  Version indicates the version of the zone in context of assigned DNS NSGs and nameservers.  Possible values: - _v1_: The zone uses original NSG model - _v2_: The zone uses new \&quot;Unified Nameservers\&quot; model | [optional] [readonly] 
 **View** | Pointer to **string** | The resource identifier. | [optional] 
 **Warnings** | Pointer to [**[]Warning**](Warning.md) | The list of an auth zone warnings. | [optional] [readonly] 
 **ZoneAuthority** | Pointer to [**ZoneAuthority**](ZoneAuthority.md) | Optional. ZoneAuthority. | [optional] 
@@ -1040,6 +1041,31 @@ SetUseForwardersForSubzones sets UseForwardersForSubzones field to given value.
 `func (o *AuthZone) HasUseForwardersForSubzones() bool`
 
 HasUseForwardersForSubzones returns a boolean if a field has been set.
+
+### GetVersion
+
+`func (o *AuthZone) GetVersion() string`
+
+GetVersion returns the Version field if non-nil, zero value otherwise.
+
+### GetVersionOk
+
+`func (o *AuthZone) GetVersionOk() (*string, bool)`
+
+GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersion
+
+`func (o *AuthZone) SetVersion(v string)`
+
+SetVersion sets Version field to given value.
+
+### HasVersion
+
+`func (o *AuthZone) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 ### GetView
 

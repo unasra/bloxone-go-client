@@ -2657,6 +2657,7 @@ components:
         grid_primaries:
         - host: host
         - host: host
+        version: version
         tags: "{}"
       properties:
         comment:
@@ -2713,6 +2714,17 @@ components:
           additionalProperties: false
           description: Tagging specifics.
           type: object
+        version:
+          description: |-
+            Read Only.
+
+            Version indicates the version of the Authoritative DNS Server Group in context of DNS NSGs and nameservers that are used.
+
+            Possible values:
+            - _v1_: The Authoritative DNS Server Group uses original NSG model
+            - _v2_: The Authoritative DNS Server Group uses new "Unified Nameservers" model
+          readOnly: true
+          type: string
       required:
       - name
       title: AuthNSG
@@ -2852,6 +2864,7 @@ components:
         - name: name
           message: message
         compartment_id: compartment_id
+        version: version
         tags: "{}"
         dnssec_keys:
         - public_key: public_key
@@ -3368,6 +3381,17 @@ components:
             Defaults to _true_.
           format: boolean
           type: boolean
+        version:
+          description: |-
+            Read Only.
+
+            Version indicates the version of the zone in context of assigned DNS NSGs and nameservers.
+
+            Possible values:
+            - _v1_: The zone uses original NSG model
+            - _v2_: The zone uses new "Unified Nameservers" model
+          readOnly: true
+          type: string
         view:
           description: The resource identifier.
           type: string
@@ -3384,18 +3408,18 @@ components:
     configAuthZoneConfig:
       properties:
         external_primaries:
-          description: Optional. DNS primaries external to BloxOne DDI. Order is not
-            significant.
+          description: Optional. DNS primaries external to Universal DDI. Order is
+            not significant.
           items:
             $ref: '#/components/schemas/configExternalPrimary'
           type: array
         external_secondaries:
-          description: DNS secondaries external to BloxOne DDI. Order is not significant.
+          description: DNS secondaries external to Universal DDI. Order is not significant.
           items:
             $ref: '#/components/schemas/configExternalSecondary'
           type: array
         internal_secondaries:
-          description: Optional. BloxOne DDI hosts acting as internal secondaries.
+          description: Optional. Universal DDI hosts acting as internal secondaries.
             Order is not significant.
           items:
             $ref: '#/components/schemas/configInternalSecondary'
@@ -4026,6 +4050,7 @@ components:
           grid_primaries:
           - host: host
           - host: host
+          version: version
           tags: "{}"
       properties:
         result:
@@ -4168,6 +4193,7 @@ components:
           - name: name
             message: message
           compartment_id: compartment_id
+          version: version
           tags: "{}"
           dnssec_keys:
           - public_key: public_key
@@ -8225,6 +8251,7 @@ components:
           grid_primaries:
           - host: host
           - host: host
+          version: version
           tags: "{}"
         - nsgs:
           - nsgs
@@ -8324,6 +8351,7 @@ components:
           grid_primaries:
           - host: host
           - host: host
+          version: version
           tags: "{}"
       properties:
         results:
@@ -8469,6 +8497,7 @@ components:
           - name: name
             message: message
           compartment_id: compartment_id
+          version: version
           tags: "{}"
           dnssec_keys:
           - public_key: public_key
@@ -8883,6 +8912,7 @@ components:
           - name: name
             message: message
           compartment_id: compartment_id
+          version: version
           tags: "{}"
           dnssec_keys:
           - public_key: public_key
@@ -12113,6 +12143,7 @@ components:
           grid_primaries:
           - host: host
           - host: host
+          version: version
           tags: "{}"
       properties:
         result:
@@ -12255,6 +12286,7 @@ components:
           - name: name
             message: message
           compartment_id: compartment_id
+          version: version
           tags: "{}"
           dnssec_keys:
           - public_key: public_key
@@ -15794,6 +15826,7 @@ components:
           grid_primaries:
           - host: host
           - host: host
+          version: version
           tags: "{}"
       properties:
         result:
@@ -15936,6 +15969,7 @@ components:
           - name: name
             message: message
           compartment_id: compartment_id
+          version: version
           tags: "{}"
           dnssec_keys:
           - public_key: public_key

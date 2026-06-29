@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Nameservers** | Pointer to [**[]Nameserver**](Nameserver.md) | Optional. A list of DNS Nameservers of various roles. | [optional] 
 **Nsgs** | Pointer to **[]string** | The resource identifier. | [optional] 
 **Tags** | Pointer to **map[string]interface{}** | Tagging specifics. | [optional] 
+**Version** | Pointer to **string** | Read Only.  Version indicates the version of the Authoritative DNS Server Group in context of DNS NSGs and nameservers that are used.  Possible values: - _v1_: The Authoritative DNS Server Group uses original NSG model - _v2_: The Authoritative DNS Server Group uses new \&quot;Unified Nameservers\&quot; model | [optional] [readonly] 
 
 ## Methods
 
@@ -304,6 +305,31 @@ SetTags sets Tags field to given value.
 `func (o *AuthNSG) HasTags() bool`
 
 HasTags returns a boolean if a field has been set.
+
+### GetVersion
+
+`func (o *AuthNSG) GetVersion() string`
+
+GetVersion returns the Version field if non-nil, zero value otherwise.
+
+### GetVersionOk
+
+`func (o *AuthNSG) GetVersionOk() (*string, bool)`
+
+GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersion
+
+`func (o *AuthNSG) SetVersion(v string)`
+
+SetVersion sets Version field to given value.
+
+### HasVersion
+
+`func (o *AuthNSG) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
