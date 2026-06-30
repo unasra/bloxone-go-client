@@ -3281,7 +3281,7 @@ components:
             The limit is enforced when serving the zone on-prem, not at the time of record creation or update.
             Exceeding the limit will result in the zone failing to load or to be updated.
             If 0, it means there is no limit.
-            Defauts to _2000_.
+            Defaults to _2000_.
           format: int64
           type: integer
         max_types_per_name:
@@ -3291,7 +3291,7 @@ components:
             The limit is enforced when serving the zone on-prem, not at the time of record creation or update.
             Exceeding the limit will result in the zone failing to load or to be updated.
             If 0, it means there is no limit.
-            Defauts to _100_.
+            Defaults to _100_.
           format: int64
           type: integer
         nameservers:
@@ -11969,7 +11969,7 @@ components:
           description: The resource identifier.
           type: string
         origin:
-          title: |-
+          description: |-
             Allowed values:
             * _external_,
             * _nios-x_,
@@ -11980,7 +11980,7 @@ components:
           readOnly: true
           type: string
         role:
-          title: |-
+          description: |-
             Allowed values:
             * _primary_,
             * _secondary_

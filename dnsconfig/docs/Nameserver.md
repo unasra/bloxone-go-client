@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Address** | Pointer to **string** | Optional. Required only if _origin_ is _external_. IP Address of the nameserver. | [optional] 
 **Fqdn** | Pointer to **string** | Optional. Required only if _origin_ is _external_. FQDN of the nameserver. | [optional] 
 **Host** | Pointer to **string** | The resource identifier. | [optional] 
-**Origin** | Pointer to **string** |  | [optional] 
+**Origin** | Pointer to **string** | Allowed values: * _external_, * _nios-x_, * _nios_ | [optional] 
 **ProtocolFqdn** | Pointer to **string** | FQDN of the nameserver in punycode. | [optional] [readonly] 
-**Role** | **string** |  | 
+**Role** | **string** | Allowed values: * _primary_, * _secondary_ | 
 **Stealth** | Pointer to **bool** | If enabled, the NS record and glue record will NOT be automatically generated according to secondaries nameserver assignment.  Default: _false_ | [optional] 
 **TsigEnabled** | Pointer to **bool** | Optional. If enabled, secondaries will use the configured TSIG key when requesting a zone transfer from a primary. | [optional] 
 **TsigKey** | Pointer to [**TSIGKey**](TSIGKey.md) | Optional. TSIG key.  Error if empty while _tsig_enabled_ is _true_. | [optional] 
