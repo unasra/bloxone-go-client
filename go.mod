@@ -1,3 +1,4 @@
+// Deprecated: bloxone-go-client is deprecated. Use github.com/infobloxopen/universal-ddi-go-client instead.
 module github.com/infobloxopen/bloxone-go-client
 
 go 1.19

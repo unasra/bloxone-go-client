@@ -1,3 +1,6 @@
+> [!WARNING]
+> **This repository is deprecated.** Please migrate to the successor library: [universal-ddi-go-client](https://github.com/infobloxopen/universal-ddi-go-client). See [deprecated.md](deprecated.md) for details.
+
 # Overview
 
 This library enables you to interact with the Infoblox BloxOne APIs using Go. The library is generated using the [OpenAPI Generator](https://openapi-generator.tech) project. 
