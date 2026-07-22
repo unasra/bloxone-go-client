@@ -20,4 +20,4 @@ import "github.com/infobloxopen/bloxone-go-client/..."
 import "github.com/infobloxopen/universal-ddi-go-client/..."
 ```
 
-No further releases will be made to this repository.
+> **Note:** No further releases will be made to this repository.
