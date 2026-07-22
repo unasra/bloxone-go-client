@@ -20,4 +20,7 @@ import "github.com/infobloxopen/bloxone-go-client/..."
 import "github.com/infobloxopen/universal-ddi-go-client/..."
 ```
 
+For detailed migration instructions, see the [migration guide](https://github.com/infobloxopen/universal-ddi-go-client/blob/master/README.md#migrating-from-bloxone-go-client).
+
+
 > **Note:** No further releases will be made to this repository.
